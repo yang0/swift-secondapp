@@ -10,8 +10,13 @@ import UIKit
 
 class AddToDoItemViewController: UIViewController {
 
+    var toDoItem: ToDoItem = ToDoItem()
 
 
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,14 +29,23 @@ class AddToDoItemViewController: UIViewController {
     }
     
 
-    /*
+    
     // #pragma mark - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if sender as? UIBarButtonItem != self.doneButton{
+            return
+        }
+        
+        if (self.textField.text.utf16Count > 0) {
+            self.toDoItem.itemName = self.textField.text
+            self.toDoItem.completed = false
+        }
     }
-    */
+    
 
 }

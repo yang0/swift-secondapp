@@ -70,8 +70,16 @@
                                 <segue destination="OKv-po-sQa" kind="unwind" unwindAction="unwindToList:" id="ema-4O-Exb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZfO-ky-f2W"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZfO-ky-f2W">
+                            <connections>
+                                <segue destination="OKv-po-sQa" kind="unwind" unwindAction="unwindToList:" id="ECL-Bc-mfD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="ZfO-ky-f2W" id="XT7-9I-Qo2"/>
+                        <outlet property="textField" destination="0sc-1b-N5a" id="Zux-8Y-OA0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgh-Ho-YGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OKv-po-sQa" userLabel="Exit" sceneMemberID="exit"/>
@@ -81,7 +89,6 @@
         <!--Navigation Controller-->
         <scene sceneID="qSW-WO-5dC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B5n-oE-jkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ldg-nR-mR0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DXw-f5-bIy">
@@ -93,6 +100,7 @@
                         <segue destination="BWU-MI-MWd" kind="relationship" relationship="rootViewController" id="3Jz-Fs-D5H"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5n-oE-jkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="378"/>
         </scene>
